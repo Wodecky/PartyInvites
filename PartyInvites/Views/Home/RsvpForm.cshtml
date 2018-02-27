@@ -12,18 +12,21 @@
     <title>RsvpForm</title>
 </head>
 <body>
-    @using (Html.BeginForm())
-    {
-        <p> Full name: @Html.TextBoxFor(x => x.Name)</p>
-        <p> Your e-mail: @Html.TextBoxFor(x => x.Email)</p>
-        <p> Your phone number: @Html.TextBoxFor(x=> x.Phone)</p>
-        <p> 
-            Will you come?
-            @Html.DropDownListFor(x => x.WillAttend, new[]{
-                new SelectListItem(){Text="Yes, I will come", Value = bool.TrueString },
-                new SelectListItem(){Text = "No,  I won't come", Value = bool.FalseString} }, "Choose")
-        </p>
-        <input type="submit" value="Send RSVP"/>
-    }    
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            <p> Full name: @Html.TextBoxFor(x => x.Name)</p>
+            <p> Your e-mail: @Html.TextBoxFor(x => x.Email)</p>
+            <p> Your phone number: @Html.TextBoxFor(x=> x.Phone)</p>
+            <p> 
+                Will you come?
+                @Html.DropDownListFor(x => x.WillAttend, new[]{
+                    new SelectListItem(){Text="Yes, I will come", Value = bool.TrueString },
+                    new SelectListItem(){Text = "No,  I won't come", Value = bool.FalseString} }, "Choose")
+            </p>
+            <input type="submit" value="Send RSVP"/>
+        }
+    </div>
 </body>
 </html>
