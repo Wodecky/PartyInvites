@@ -8,11 +8,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>New Years Eve Party!</title>
 </head>
 <body>
     <div> 
         @ViewBag.Greeting, World (from View)
+        <p> Welcome to great party. <br/>
+        (To do: all the stuff)
+        </p>
+        @Html.ActionLink("Send RSVP", "RsvpForm")
     </div>
 </body>
 </html>
